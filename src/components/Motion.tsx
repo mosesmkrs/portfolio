@@ -91,8 +91,8 @@ const Motion: FC<Props> = ({
 
   useEffect(() => {
     setEarthSize({
-      width: earthRef.current ? earthRef.current.clientWidth : 0,
-      height: earthRef.current ? earthRef.current.clientHeight : 0,
+      width: earthRef.current ? earthRef.current : 0,
+      height: earthRef.current ? earthRef.current : 0,
     });
   }, []);
 

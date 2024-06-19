@@ -65,8 +65,8 @@ const Marquee: FC<MarqueeProps> = React.memo(
     const [totalTries, setTotalTries] = useState(0);
     const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
     const [childrenPosition, setChildrenPosition] = useState<Position[]>([]);
-    const containerRef = useRef(null);
-    const marqueeRef = useRef(null);
+    const containerRef = useRef<HTMLDivElement | null>(null);
+    const marqueeRef = useRef<HTMLDivElement | null>(null);
     const isInitRender = useRef(true);
 
     useEffect(() => {
@@ -77,7 +77,7 @@ const Marquee: FC<MarqueeProps> = React.memo(
     }, [onInit]);
 
     useEffect(() => {
-      if (scatterRandomly) {
+      if (scatterRandomly && containerRef.current) {
         setContainerSize({
           width: containerRef.current.clientWidth,
           height: containerRef.current.clientHeight,
@@ -86,17 +86,17 @@ const Marquee: FC<MarqueeProps> = React.memo(
     }, [scatterRandomly]);
 
     useEffect(() => {
-      if (!isNaN(velocity) && velocity > 0) {
+      if (!isNaN(velocity) && velocity > 0 && containerRef.current) {
         setAnimationDuration(containerRef.current.clientWidth / velocity);
       }
     }, [velocity]);
 
     useEffect(() => {
-      if (scatterRandomly && nestedUpdateCount < NESTED_UPDATE_LIMIT) {
+      if (scatterRandomly && nestedUpdateCount < NESTED_UPDATE_LIMIT && containerRef.current && marqueeRef.current) {
         const siblings = marqueeRef.current.childNodes;
         if (siblings.length > 0) {
           const containerRect = containerRef.current.getBoundingClientRect();
-          const childRect = siblings[siblings.length - 1].getBoundingClientRect();
+          const childRect = (siblings[siblings.length - 1] as Element).getBoundingClientRect();
 
           if (outOfContainerBounds(childRect, containerRect)) {
             setChildrenPosition((state) => state.slice(0, -1));
@@ -106,8 +106,8 @@ const Marquee: FC<MarqueeProps> = React.memo(
             let hasOverlaps = false;
 
             for (let i = 0; i + 1 < siblings.length; i++) {
-              const rect1 = siblings[i].getBoundingClientRect();
-              const rect2 = siblings[siblings.length - 1].getBoundingClientRect();
+              const rect1 = (siblings[i] as Element).getBoundingClientRect();
+              const rect2 = (siblings[siblings.length - 1] as Element).getBoundingClientRect();
 
               if (doesOverlap(rect1, rect2, containerRect)) {
                 hasOverlaps = true;
@@ -161,10 +161,7 @@ const Marquee: FC<MarqueeProps> = React.memo(
     }, [nestedUpdateCount, retryAfterExceedingUpdateDepthTrigger]);
 
     const renderChild = (child: ReactNode, index: number, isOriginal: boolean) => {
-      let pos: Position;
-      if (childrenPosition[index] !== undefined) {
-        pos = childrenPosition[index];
-      }
+      const pos: Position = childrenPosition[index] || { x: 0, y: 0 };
 
       return (
         <Child
