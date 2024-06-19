@@ -4,7 +4,7 @@ import { Typewriter } from 'react-simple-typewriter';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 import './page.css'
-import { FaInstagram, FaGithub, FaLinkedin, FaLinkedinIn } from "react-icons/fa";
+import { FaInstagram, FaGithub, FaLinkedin, FaLinkedinIn, FaTelegram } from "react-icons/fa";
 
 const Hero = () => {
   const { ref, inView } = useInView({
@@ -36,11 +36,20 @@ const Hero = () => {
         <div className='icons m-8 flex'>
           <a href="https://github.com/mosesmkrs" className='mx-2'>
             <div className='layer'>
-              <span className='shadow-md shadow-blue-500 text-blue-500 border-blue-500'></span>
-              <span className='shadow-md shadow-blue-500 text-blue-500 border-blue-500'></span>
-              <span className='shadow-md shadow-blue-500 text-blue-500 border-blue-500'></span>
-              <span className='shadow-md shadow-blue-500 text-blue-500 border-blue-500'></span>
-              <span className='fab shadow-md shadow-blue-500 text-blue-500 border-blue-500 m-0 p-0'><FaGithub/></span>
+              <span className='shadow-md shadow-white text-white border-white'></span>
+              <span className='shadow-md shadow-white text-white border-white'></span>
+              <span className='shadow-md shadow-white text-white border-white'></span>
+              <span className='shadow-md shadow-white text-white border-white'></span>
+              <span className='fab shadow-md shadow-white text-white border-white m-0 p-0'><FaGithub/></span>
+            </div>
+          </a>
+          <a href="https://t.me/mosesmkrs" className='mx-2'>
+            <div className='layer'>
+              <span className='shadow-md shadow-sky-500 text-sky-500 border-sky-500'></span>
+              <span className='shadow-md shadow-sky-500 text-sky-500 border-sky-500'></span>
+              <span className='shadow-md shadow-sky-500 text-sky-500 border-sky-500'></span>
+              <span className='shadow-md shadow-sky-500 text-sky-500 border-sky-500'></span>
+              <span className='fab shadow-md shadow-sky-500 text-sky-500 border-sky-500'><FaTelegram/></span>
             </div>
           </a>
           <a href="https://www.instagram.com/m.o.s.e.2.2.mkrs/" className='mx-2'>
@@ -54,11 +63,11 @@ const Hero = () => {
           </a>
           <a href="https://www.linkedin.com/in/moses-karisa-11526127a" className='mx-2'>
             <div className='layer'>
-              <span className='shadow-md shadow-blue-300 text-blue-300 border-blue-300'></span>
-              <span className='shadow-md shadow-blue-300 text-blue-300 border-blue-300'></span>
-              <span className='shadow-md shadow-blue-300 text-blue-300 border-blue-300'></span>
-              <span className='shadow-md shadow-blue-300 text-blue-300 border-blue-300'></span>
-              <span className='fab shadow-md shadow-blue-300 text-blue-300 border-blue-300'><FaLinkedinIn/></span>
+              <span className='shadow-md shadow-blue-800 text-blue-800 border-blue-800'></span>
+              <span className='shadow-md shadow-blue-800 text-blue-800 border-blue-800'></span>
+              <span className='shadow-md shadow-blue-800 text-blue-800 border-blue-800'></span>
+              <span className='shadow-md shadow-blue-800 text-blue-800 border-blue-800'></span>
+              <span className='fab shadow-md shadow-blue-800 text-blue-800 border-blue-800'><FaLinkedinIn/></span>
             </div>
           </a>
         </div>
