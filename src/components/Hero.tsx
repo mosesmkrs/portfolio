@@ -73,7 +73,7 @@ const Hero = () => {
         </div>
       </motion.div>
       <div className='w-3/4 md:h-screen h-fit mx-auto'>
-        <Image src="/images/project.png" alt="star" width={400} height={400} className='rounded-full translate-y-16'/>
+        <Image src="/images/mosee.png" alt="star" width={400} height={400} className='rounded-full translate-y-16'/>
       </div>
     </section>
   );
