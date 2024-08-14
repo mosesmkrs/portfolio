@@ -52,7 +52,7 @@ const Hero = () => {
               <span className='fab shadow-md shadow-sky-500 text-sky-500 border-sky-500'><FaTelegram/></span>
             </div>
           </a>
-          <a href="https://www.instagram.com/m.o.s.e.2.2.mkrs/" className='mx-2'>
+          <a href="https://www.instagram.com/_moses_mkrs_/" className='mx-2'>
             <div className='layer'>
               <span className='text-pink-500 shadow-md shadow-pink-500 border-pink-500'></span>
               <span className='text-pink-500 shadow-md shadow-pink-500 border-pink-500'></span>

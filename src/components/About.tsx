@@ -32,17 +32,14 @@ const About = () => {
 
   return (
     <section ref={ref} className="py-8 text-center bg-gradient-radial from-gray-800 to-black">
-      <motion.div
-        initial={{ x: '-100vw' }}
-        animate={inView ? { x: 0 } : { x: '-100vw' }}
-        transition={{ type: 'spring', stiffness: 20 }}
+      <div
       >
         <h2 className="text-4xl mb-4">About Me</h2>
         <p className="text-xl mx-auto max-w-xl">
           I am a passionate Full Stack Developer with expertise in both web and blockchain technologies. I love creating
           interactive and user-friendly applications.
         </p>
-      </motion.div>
+      </div>
 
       {/* Technical Skillset Section */}
       <div className="my-16 ">
