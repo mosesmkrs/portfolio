@@ -9,13 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sendgrid/mail": "^8.1.6",
     "babel-plugin-styled-components": "^2.1.4",
     "clsx": "^2.1.1",
     "clsx-tailwind-merge": "^1.0.4",
     "framer-motion": "^11.2.10",
+    "lucide-react": "^0.559.0",
     "next": "16.0.8",
+    "nodemailer": "^7.0.11",
     "react": "19.2.1",
     "react-dom": "19.2.1",
+    "react-hot-toast": "^2.6.0",
     "react-icons": "^5.2.1",
     "react-intersection-observer": "^9.10.3",
     "react-simple-typewriter": "^5.0.1",
@@ -24,6 +28,7 @@
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/nodemailer": "^7.0.4",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "eslint": "^9.0.0",
