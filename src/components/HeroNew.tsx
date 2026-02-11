@@ -120,7 +120,7 @@ const HeroNew: React.FC = () => {
         transition={{ duration: 0.8, delay: 1 }}
       >
         <motion.a
-          href="https://docs.google.com/document/d/1qRzze997qrmZT1IzU4O2j2OecOE5294e/edit?usp=sharing&ouid=102187367901630105378&rtpof=true&sd=true"
+          href="https://docs.google.com/document/d/1NrDiFU_Kxsy4iYzthQBu1mGcS9bfep0m/edit?usp=sharing&ouid=102187367901630105378&rtpof=true&sd=true"
           target="_blank"
           rel="noopener noreferrer"
           className="px-8 py-3 bg-gradient-to-r from-neon-magenta-500 to-cyber-teal-500 text-white font-semibold rounded-lg shadow-neon hover:shadow-neon-hover transition-all duration-300 inline-flex items-center"
